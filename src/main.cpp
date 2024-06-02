@@ -2,7 +2,7 @@
 #include <iostream>
 
 // Window Class
-#include "window.h"
+#include "window.hpp"
 
 // Player Class
 #include "player.cpp"
