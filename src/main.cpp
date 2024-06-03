@@ -12,6 +12,12 @@ int main(){
   // Define the window
   Window GameWindow;
   init_window(&GameWindow);
+  int screenWidth;
+  int screenHeight;
+  int gravity = 1;
+  bool flip = false;
+  bool pressed = false;
+  SDL_GetWindowSize(GameWindow.SDLWindow, &screenWidth, &screenHeight);
   SDL_Event event;
   SDL_Color yellow = {255, 204, 0, 255};
   SDL_Rect nullRect = {0, 0, 0, 0};
@@ -24,7 +30,28 @@ int main(){
     if (event.type == SDL_QUIT){
       running = false;
     }
-    player.y += 1;
+    if (event.type == SDL_KEYUP){
+//       Debug
+//       std::cout << "Key up!" << std::endl;
+      pressed = false;
+    }
+    if (event.type == SDL_KEYDOWN && pressed == false){
+//       Debug
+//       std::cout << "Key down!" << std::endl;
+      flip = true;
+      pressed = true;
+    }
+    if (flip == true){
+      gravity *= -1;
+      flip = false;
+    }
+    player.y += gravity;
+    if (player.y > screenHeight - player.height){
+      player.y = screenHeight - player.height;
+    }
+    if (player.y < 0){
+      player.y = 0;
+    }
     updatePlayerRect(&player);
     RenderFrame(&GameWindow, &player);
   }
