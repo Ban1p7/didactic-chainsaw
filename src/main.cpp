@@ -24,6 +24,8 @@ int main(){
     if (event.type == SDL_QUIT){
       running = false;
     }
+    player.y += 1;
+    updatePlayerRect(&player);
     RenderFrame(&GameWindow, &player);
   }
   SDL_Quit();

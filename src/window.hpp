@@ -32,6 +32,11 @@ void init_window(Window* GameWindow){
 // Render function
 void RenderFrame(Window* GameWindow, Player* player){
   SDL_FillRect(
+      GameWindow->SDLWindowSurface,                                        // Window surface
+      nullptr,                                                             // Only fill a section of the surface
+      SDL_MapRGB(GameWindow->SDLWindowSurface->format, 100, 100, 255)      // The format to fill the screen, then the rgb values
+    );
+  SDL_FillRect(
     GameWindow->SDLWindowSurface,
     &player->posRect,
     SDL_MapRGBA(
