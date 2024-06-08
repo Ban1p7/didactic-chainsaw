@@ -1,6 +1,9 @@
 # Didactic Chainsaw
 ###### Thanks for the name, github random name generator
 
+## Disclaimer:
+CMakeLists.txt was not made by me, it was altered from the [raylib-cmake-template](https://github.com/SasLuca/raylib-cmake-template).
+
 ## To build from source:
 Note: All commands are for linux. If your OS is anything else, I'm sure you can figure something out.
 ### Walkthrough
