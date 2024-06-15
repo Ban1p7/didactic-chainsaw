@@ -7,7 +7,7 @@ struct Object {
   double x, y;
   int width, height;
   double xv, yv;
-  Texture2D sprite;
+  Texture2D *sprite;
 };
 
 bool doObjectsCollide(Object *thing1, Object *thing2){
