@@ -83,7 +83,7 @@ int main(void){
 //             playing = false;
             if ((annoyingEnemy.xv == 0 && annoyingEnemy.yv == 0) || ((annoyingEnemy.xv < 0 && annoyingEnemy.x < 0) || annoyingEnemy.xv > 0 && annoyingEnemy.x > screenWidth)){
 //             std::cout << "Began attack" << std::endl;
-            stillTime = 0;
+            stillTime -= maxStillTime;
               if (player.x + player.width/2 < screenWidth / 2){
                 annoyingEnemy.x = -16;
                 annoyingEnemy.y = screenHeight - floor.height - annoyingEnemy.height;
